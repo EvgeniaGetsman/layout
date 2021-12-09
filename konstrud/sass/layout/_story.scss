@@ -1,0 +1,82 @@
+.story {
+    margin-bottom: 110px;
+    @include _768 {
+        margin-bottom: 60px;
+    }
+}
+
+.story__name {
+    text-align: center;
+    margin-bottom: 50px;
+    @include _768 {
+        margin-bottom: 35px;
+    }
+    &::after {
+        @include line();
+    }
+    h3 {
+        @include head;
+    }
+}
+.story__box {
+    @include flex(0, 80px, 0, flex-end);
+    @include _1024 {
+        @include flex(space-between, 10px, column, center);
+    }
+    @include _768 {
+        @include flex(space-between, 10px, row, center);
+    }
+    .story-text {
+        width: 50%;
+        @include flex(0, 30px, column, left);
+        @include fonts(13px, 23px, 400, 0.5px, $txt_color);
+        @include _1024 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        @include _768 {
+            @include fonts(11px, 20px, 400, 0.5px, $txt_color);
+            text-align: justify;
+            align-self: flex-start;
+        }
+        & :first-of-type {
+            @include fonts(20px, 27px, 700, 0.5px, $txt_color);
+            span {
+                color: #00a4e5;
+            }
+            @include _768 {
+                @include fonts(16px, 23px, 700, 0.5px, $txt_color);
+            }
+        }
+    }
+    .story-gallery {
+        width: 50%;
+        @include flex(0, 25px, 0, flex-end);
+        @include _1024 {
+            width: 100%;
+            @include flex(space-around, 10px, 0, center);
+        }
+        @include _768 {
+            @include flex(center, 10px, column, flex-end);
+        }
+        .gallery-item {
+            position: relative;
+            .descript {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                @include fonts(24px, 29px, 800, 0.5px, #fff);
+                @include _768 {
+                    @include fonts(18px, 25px, 800, 0.5px, #fff);
+                }
+            }
+            img {
+                @include _768 {
+                    width: 120px;
+                    height: 160px;
+                }
+            }
+        }
+    }
+}

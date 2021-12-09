@@ -1,0 +1,102 @@
+.contact-bgcolor {
+    background: #141a20;
+    border: 6px double #141a20;
+}
+.contact {
+    @include flex(space-between, 65px, 0, flex-start);
+    padding: 50px 0;
+    @include _768 {
+        @include flex(start, 20px, 0, flex-start);
+        padding: 30px 0;
+    }
+    .item {
+        display: flex;
+        align-items: flex-start;
+    }
+    .contact-name h1 {
+        @include fonts(11px, 15px, 400, 0.85px, #fff);
+        margin-bottom: 15px;
+        @include _768 {
+            @include fonts(9px, 15px, 400, 0.85px, #fff);
+            margin-bottom: 10px;
+        }
+    }
+    .company {
+        width: 250px/940px * 100%;
+        @include _768 {
+            display: none;
+            h1 {
+                display: none;
+            }
+        }
+        .company-item {
+            @include flex(0, 15px, column, flex-start);
+            p {
+                @include fonts(11px, 19px, 400, 0.85, #fff);
+            }
+            @include _768 {
+                display: none;
+            }
+        }
+    }
+    .links {
+        width: 260px/940px * 100%;
+        @include _768 {
+            width: 48%;
+        }
+        .links-item {
+            @include flex(space-between, 10px, 0, flex-start);
+            @include _768 {
+                @include flex(flex-start, 10px, 0, flex-start);
+            }
+            .links-text {
+                @include flex(space-between, 0, column, flex-start);
+                li {
+                    padding: 0 0 10px;
+                    cursor: pointer;
+                    &:hover {
+                        color: #00a4e5;
+                    }
+                    @include fonts(11px, 10px, 600, 0.85px, #fff);
+                    @include _768 {
+                        @include fonts(8px, 10px, 600, 0.85, #fff);
+                    }
+                }
+            }
+        }
+    }
+
+    .contact_us {
+        width: 140px/940px * 100%;
+        @include _768 {
+            width: 23%;
+        }
+        .contact_us-item {
+            li {
+                padding: 0 0 10px;
+                @include fonts(11px, 10px, 400, 0.85, #fff);
+                @include _768 {
+                    @include fonts(9px, 10px, 400, 0.85, #fff);
+                }
+            }
+        }
+    }
+    .social {
+        width: 87px/940px * 100%;
+        padding: 27px 0;
+        @include _768 {
+            width: 20%;
+        }
+        @include flex(space-between, 20px, 0, flex-start);
+        img {
+            cursor: pointer;
+            &:hover {
+                background: #00a4e5;
+                border-radius: 50%;
+            }
+        }
+        @include _768 {
+            @include flex(space-between, 10px, 0, flex-start);
+        }
+    }
+}

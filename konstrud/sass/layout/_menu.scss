@@ -1,0 +1,35 @@
+.menu {
+    @include flex(space-between);
+    padding: 25px 0;
+    @include _768 {
+        @include flex(center, 15px, column);
+        padding: 15px 0;
+    }
+    ul {
+        @include flex(space-around, 40px);
+        @include _768 {
+            @include flex(space-between, 25px);
+        }
+        a {
+            @include fonts(12px, 16px, 700, 1px, #000);
+            @include _768 {
+                @include fonts(10px, 12px, 700, 1px, #000);
+            }
+            &:hover {
+                color: #00a4e5;
+            }
+        }
+    }
+}
+nav {
+    &::after {
+        content: "";
+        display: block;
+        background: #e6e6e6;
+        height: 1px;
+        margin-bottom: 55px;
+        @include _768 {
+            margin-bottom: 30px;
+        }
+    }
+}

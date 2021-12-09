@@ -1,0 +1,8 @@
+.build {
+    background: url(./../img/bgcity.jpg) no-repeat center border-box;
+    background-size: cover;
+    border-bottom: 1px solid #171819;
+    @include _768 {
+        background-size: auto;
+    }
+}

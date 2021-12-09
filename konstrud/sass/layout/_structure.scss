@@ -1,0 +1,30 @@
+.structure {
+    @include flex(0, 28px, 0, flex-start);
+    margin-bottom: 100px;
+    @include _1024 {
+        gap: 15px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    @include _768 {
+        @include flex(0, 15px, column, center);
+        margin-bottom: 20px;
+    }
+    .structure-item {
+        border: 1px solid #e6e6e6;
+        padding: 38px 20px;
+        @include _768 {
+            text-align: center;
+        }
+        img {
+            margin-bottom: 25px;
+        }
+        h4 {
+            margin-bottom: 15px;
+            @include fonts(16px, 24px, 700, 0.5px, $txt_color);
+        }
+        p {
+            @include fonts(13px, 23px, 400, 0.5px, $txt_color);
+        }
+    }
+}

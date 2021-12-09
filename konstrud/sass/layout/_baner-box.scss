@@ -1,0 +1,50 @@
+@keyframes updown {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@font-face {
+  font-family: "BebasNeue";
+  font-style: normal;
+  font-weight: 400;
+  src: local("BebasNeue"), url("/fonts/BebasNeue.ttf") format("ttf");
+}
+
+.baner-box {
+  padding: 40px 0 70px;
+  margin: 0 auto;
+  @include flex(space-between, 0, column);
+  .baner__text {
+    text-align: center;
+    h1 {
+      font-size: 60px;
+      line-height: 70px;
+      font-family: "BebasNeue", sans-serif;
+      color: white;
+      letter-spacing: 6px;
+      @include _1024 {
+        font-size: 30px;
+        line-height: 50px;
+      }
+    }
+    p {
+      @include fonts(16px, 22px, 600, 0, #fff);
+      @include _1024 {
+        @include fonts(11px, 20px, 600, 0, #fff);
+      }
+      @include _768 {
+        @include fonts(9px, 20px, 600, 0, #fff);
+      }
+    }
+  }
+  a {
+    @include fonts(11px, 15px, 600, 4px, #fff);
+    animation: updown 2s ease infinite;
+  }
+}

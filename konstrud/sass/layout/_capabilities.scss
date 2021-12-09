@@ -1,0 +1,36 @@
+.capabilities {
+    @include flex(center);
+    margin-bottom: 80px;
+    @include _768 {
+        @include flex(center, 15px, column);
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .capabilities__name {
+        width: 35%;
+        @include head;
+        @include _768 {
+            width: 100%;
+        }
+        &::after {
+            @include line();
+            margin-left: 0;
+            @include _768 {
+                margin: 10px auto;
+            }
+        }
+    }
+    .capabilities__text {
+        width: 65%;
+        @include flex(space-between, 30px);
+        @include fonts(11px, 19px, 400, 0.5px, $txt_color);
+        @include _768 {
+            @include flex(space-between, 15px, column);
+            width: 100%;
+        }
+        button {
+            @include button;
+        }
+    }
+}

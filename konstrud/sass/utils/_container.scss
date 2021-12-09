@@ -1,0 +1,12 @@
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+
+    @include _1024 {
+        max-width: 720px;
+    }
+    @include _768 {
+        max-width: 325px;        
+    }
+}
+

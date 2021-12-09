@@ -1,0 +1,59 @@
+$txt_color: #48555b;
+
+@mixin fonts($size, $line, $weight, $spacing, $color) {
+    font-family: "Open Sans", sans-serif;
+    font-size: $size;
+    line-height: $line;
+    font-weight: $weight;
+    letter-spacing: $spacing;
+    color: $color;
+}
+
+@mixin flex($justify: start, $gap: 0, $direction: row, $align: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+    flex-direction: $direction;
+}
+
+@mixin line() {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    background: #00a4e5;
+    margin: 10px auto;
+}
+@mixin head {
+    @include fonts(18px, 25px, 700, 2px, $txt_color);
+    @include _768 {
+        @include fonts(15px, 20px, 700, 2px, $txt_color);
+    }
+}
+
+@mixin button {
+    height: 40px;
+    width: 150px;
+    background: #00a4e5;
+    border-radius: 0;
+    @include fonts(13px, 18px, 700, 0.5px, #fff);
+    &:hover {
+        background: #0597d1;
+    }
+    @include _768 {
+        @include fonts(9px, 15px, 700, 0.5px, #fff);
+    }
+}
+
+@mixin _1024 {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin _768 {
+    @media (max-width: 768px) {
+        @content;
+    }
+}

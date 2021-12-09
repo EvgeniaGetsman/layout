@@ -1,0 +1,13 @@
+.build-box {
+    padding: 120px 0 229px;
+    margin: 0 auto;
+    @include flex(0, 32px, column);
+    h3 {
+        text-align: center;
+        max-width: 350px;
+        @include fonts(30px, 36px, 700, 0.15px, $txt_color);
+    }
+    button {
+        @include button;
+    }
+}

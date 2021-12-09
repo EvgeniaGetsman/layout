@@ -1,0 +1,11 @@
+footer {
+    background: #171819;
+    height: 60px;
+    padding: 22px 0;
+    .autor {
+        text-align: center;
+        p {
+            @include fonts(11px, 15px, 400, 0.85px, #fff);
+        }
+    }
+}
